@@ -1,38 +1,50 @@
+'use client';
+
 import Link from 'next/link';
-import Logo from '../../public/geragenda-logo-white.png';
-import LogoWhite from '../../public/logo-white.svg';
+import Logo from '../../public/assets/images/geragenda-logo-white.png';
+import LogoPink from '../../public/assets/images/logo-pink.svg';
 import Image from 'next/image';
-import { Button } from './ui/button';
+import { buttonVariants } from './ui/button';
 import Menu from './Menu';
 
-export async function Header() {
+const Header = () => {
   return (
-    <header className="bg-blue-800 flex items-center fixed w-[100vw] min-h-[10vh] py-5">
+    <header className="bg-[#0d1224] flex items-center  w-[100vw] min-h-[10vh] py-5">
       <div className="container flex items-center justify-between">
         <Link href="/">
           <Image src={Logo} priority alt="GerAgenda" className="hidden lg:flex" />
-          <Image src={LogoWhite} alt="GerAgenda" className="flex lg:hidden" />
+          <Image src={LogoPink} alt="GerAgenda" className="flex lg:hidden" />
         </Link>
 
         <Menu />
 
         <div className="items-center gap-x-5 hidden lg:flex">
           <div className="flex items-center gap-x-5">
-            <Button
-              className="bg-transparent border-slate-50 border text-lg font-bold hover:bg-white hover:text-blue-800"
-              size={'lg'}
+            <Link
+              href="/customer/"
+              className={buttonVariants({
+                size: 'lg',
+                className:
+                  'bg-transparent border-[#f926ae] border text-md font-bold hover:bg-white hover:text-[#f926ae]',
+              })}
             >
-              Entrar
-            </Button>
-            <Button
-              className="bg-white text-blue-800 font-bold text-lg hover:bg-blue-800 hover:text-white hover:border"
-              size={'lg'}
+              Sou Cliente
+            </Link>
+
+            <Link
+              href="/business"
+              className={buttonVariants({
+                size: 'lg',
+                className: 'bg-[#f926ae] text-white font-extrabold text-md hover:bg-white hover:text-[#f926ae]',
+              })}
             >
-              Começar
-            </Button>
+              7 dias grátis
+            </Link>
           </div>
         </div>
       </div>
     </header>
   );
-}
+};
+
+export default Header;
