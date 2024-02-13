@@ -43,7 +43,8 @@ const Header = () => {
               href="/business"
               className={buttonVariants({
                 size: 'lg',
-                className: 'bg-[#f926aa] text-white font-bold text-md hover:bg-white hover:text-[#f926ae]',
+                variant: 'pink',
+                className: 'text-white font-bold text-md hover:bg-white hover:text-[#f926ae]',
               })}
             >
               7 dias grátis
