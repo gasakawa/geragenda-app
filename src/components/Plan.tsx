@@ -28,7 +28,12 @@ const Plan = ({ plans }: { plans: PriceType[] }) => {
           <input type="checkbox" onChange={togglePlan} />
           <span className="slider round"></span>
         </label>
-        Anual
+        <div className="flex flex-col">
+          Anual <br />
+          <span className="discount-price">
+            <del>R$120,00</del>
+          </span>
+        </div>
       </div>
 
       <span className="text-1xl font-extrabold lg:text-3xl mb-3">Professional</span>
